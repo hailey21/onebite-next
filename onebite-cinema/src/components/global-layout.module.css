@@ -1,0 +1,12 @@
+.header {
+  font-size: 20px;
+}
+
+.header > a {
+  color: rgb(229, 9, 20);
+  text-decoration: none;
+}
+
+.main {
+  padding-top: 10px;
+}
