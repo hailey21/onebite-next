@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router';
 import style from './[id].module.css';
 
 const mockData = {
