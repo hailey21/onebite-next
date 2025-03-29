@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { ReactNode } from 'react';
 import movies from '@/mock/movies.json';
 import MovieItem from '@/components/movie-item';
+import style from './index.module.css';
 
 export default function Page() {
   const router = useRouter();
@@ -14,7 +15,13 @@ export default function Page() {
       ? movies.filter((movie) => movie.title.toLowerCase().includes(q.toLowerCase()))
       : [];
 
-  return result.map((r) => <MovieItem key={r.id} {...r} />);
+  return (
+    <div className={style.search_movie}>
+      {result.map((r) => (
+        <MovieItem key={r.id} {...r} />
+      ))}
+    </div>
+  );
 }
 
 Page.getLayout = (page: ReactNode) => {

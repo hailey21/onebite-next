@@ -5,18 +5,22 @@ import MovieItem from '@/components/movie-item';
 
 export default function Home() {
   return (
-    <div>
+    <div className="container">
       <section>
         <h3>지금 가장 추천하는 영화</h3>
-        {movies.slice(0, 3).map((movie) => (
-          <MovieItem key={movie.id} {...movie} />
-        ))}
+        <div className="recommend-movie">
+          {movies.slice(0, 3).map((movie) => (
+            <MovieItem key={movie.id} {...movie} />
+          ))}
+        </div>
       </section>
       <section>
         <h3>등록된 모든 영화</h3>
-        {movies.slice(0, 5).map((movie) => (
-          <MovieItem key={movie.id} {...movie} />
-        ))}
+        <div className="all-movie">
+          {movies.map((movie) => (
+            <MovieItem key={movie.id} {...movie} />
+          ))}
+        </div>
       </section>
     </div>
   );

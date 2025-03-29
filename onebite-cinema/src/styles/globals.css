@@ -8,3 +8,13 @@ body {
   margin: 0 auto;
   padding: 20px;
 }
+
+.recommend-movie {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.all-movie {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
