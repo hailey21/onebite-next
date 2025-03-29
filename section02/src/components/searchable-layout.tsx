@@ -31,7 +31,12 @@ export default function SearchableLayout({ children }: { children: ReactNode }) 
   return (
     <div>
       <div className={style.searchbar_container}>
-        <input onKeyDown={onKeyDown} value={search} onChange={onChangeState} placeholder="검색어를 입력하세요 ..." />
+        <input
+          onKeyDown={onKeyDown}
+          value={search}
+          onChange={onChangeState}
+          placeholder="검색어를 입력하세요 ..."
+        />
         <button onClick={onSubmit}>검색</button>
       </div>
       {children}
