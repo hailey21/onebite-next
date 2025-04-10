@@ -4,7 +4,8 @@ import { MovieData } from '@/types';
 
 export default async function Page({ searchParams }: { searchParams: Promise<{ q?: string }> }) {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_API_SERVER}/movie/search?q=${(await searchParams).q}`
+    `${process.env.NEXT_PUBLIC_API_SERVER}/movie/search?q=${(await searchParams).q}`,
+    { cache: 'force-cache' }
   );
 
   if (!response.ok) {
