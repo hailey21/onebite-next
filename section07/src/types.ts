@@ -1,13 +1,11 @@
-export interface MovieData {
+export interface BookData {
   id: number;
   title: string;
   subTitle: string;
+  author: string;
+  publisher: string;
   description: string;
-  releaseDate: string;
-  company: string;
-  genres: string[];
-  runtime: number;
-  posterImgUrl: string;
+  coverImgUrl: string;
 }
 
 export interface ReviewData {
@@ -15,5 +13,5 @@ export interface ReviewData {
   content: string;
   author: string;
   createdAt: string;
-  movieId: number;
+  bookId: number;
 }
