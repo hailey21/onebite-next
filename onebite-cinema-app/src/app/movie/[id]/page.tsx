@@ -3,6 +3,7 @@ import style from './page.module.css';
 import { MovieData, ReviewData } from '@/types';
 import ReviewItem from '@/components/review-item';
 import ReviewEditor from '@/components/review-editor';
+import { revalidateTag } from 'next/cache';
 
 export async function generateStaticParams() {
   const response = await fetch(`${process.env.NEXT_PUBLIC_API_SERVER}/movie`, {
@@ -60,7 +61,10 @@ async function ReviewDetail({ movieId }: { movieId: string }) {
 }
 
 async function ReviewList({ movieId }: { movieId: string }) {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_SERVER}/review/movie/${movieId}`);
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_SERVER}/review/movie/${movieId}`, {
+    next: { tags: [`review-${movieId}`] },
+  });
+
   if (!response.ok) {
     throw new Error(`Review fetch failed: ${response.statusText}`);
   }

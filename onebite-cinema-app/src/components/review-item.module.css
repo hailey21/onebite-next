@@ -25,9 +25,6 @@
 .buttom_container {
   color: grey;
   font-size: 14px;
-}
-
-.delete_btn {
   cursor: pointer;
   text-decoration: underline;
 }

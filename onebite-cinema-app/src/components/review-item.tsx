@@ -1,5 +1,6 @@
 import { ReviewData } from '@/types';
 import style from './review-item.module.css';
+import ReviewItemDeleteButton from './review-item-delete-button';
 
 function formatDate(date: Date) {
   const year = date.getFullYear();
@@ -22,7 +23,7 @@ export default function ReviewItem({ id, content, author, createdAt, movieId }: 
 
       <div className={style.content}>{content}</div>
       <div className={style.buttom_container}>
-        <div className={style.delete_btn}>🗑️ 리뷰 삭제하기</div>
+        <ReviewItemDeleteButton reviewId={id} movieId={movieId} />
       </div>
     </div>
   );
