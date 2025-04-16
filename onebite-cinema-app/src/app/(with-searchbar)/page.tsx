@@ -7,7 +7,7 @@ import MovieItemSkeleton from '@/components/skeleton/movie-item-skeleton';
 import MovieListSkeleton from '@/components/skeleton/movie-list-skeleton';
 
 async function AllMovies() {
-  await delay(3000);
+  // await delay(3000);
   const response = await fetch(`${process.env.NEXT_PUBLIC_API_SERVER}/movie`, {
     next: { revalidate: 60 * 60 * 24 },
   });
@@ -27,7 +27,7 @@ async function AllMovies() {
 }
 
 async function RecommandMovies() {
-  await delay(1500);
+  // await delay(1500);
   const response = await fetch(`${process.env.NEXT_PUBLIC_API_SERVER}/movie/random`, {
     next: { revalidate: 3 },
   });
